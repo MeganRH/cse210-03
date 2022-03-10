@@ -1,20 +1,20 @@
 import constants
 
 #from game.casting.cast import Cast
-from cast import Cast
-from food import Food
-from score import Score
-from cycle import Cycle
-from script import Script
-from control_actors_action import ControlActorsAction
-from move_actors_action import MoveActorsAction
-from handle_collisions_action import HandleCollisionsAction
-from draw_actors_action import DrawActorsAction
-from director import Director
-from keyboard_service import KeyboardService
-from video_service import VideoService
-from color import Color
-from point import Point
+from game.cast import Cast
+from game.food import Food
+from game.score import Score
+from game.cycle import Cycle
+from game.script import Script
+from game.control_actors_action import ControlActorsAction
+from game.move_actors_action import MoveActorsAction
+from game.handle_collisions_action import HandleCollisionsAction
+from game.draw_actors_action import DrawActorsAction
+from game.director import Director
+from game.keyboard_service import KeyboardService
+from game.video_service import VideoService
+from game.color import Color
+from game.point import Point
 
 
 def main():
