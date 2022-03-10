@@ -1,3 +1,5 @@
+import handle_collisions_action, control_actors_action
+
 class Director:
     """A person who directs the game. 
     
@@ -14,7 +16,8 @@ class Director:
             video_service (VideoService): An instance of VideoService.
         """
         self._video_service = video_service
-
+        self._is_game_over = False
+        
     def start_game(self, cast, script):
         """Starts the game using the given cast and script. Runs the main game loop.
 
@@ -37,6 +40,13 @@ class Director:
             cast (Cast): The cast of actors.
             script (Script): The script of actions.
         """
-        actions = script.get_actions(group)
+        actions = script.get_actions(group)    
         for action in actions:
             action.execute(cast, script)
+            
+            if isinstance(action, handle_collisions_action.HandleCollisionsAction) == True:
+                self._is_game_over = action.get_is_game_over()
+            
+            if isinstance(action, control_actors_action.ControlActorsAction) == True:
+                action.set_is_game_over(self._is_game_over)
+                      

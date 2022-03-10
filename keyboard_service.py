@@ -1,5 +1,5 @@
 import pyray
-from game.shared.point import Point
+from point import Point
 
 
 class KeyboardService:
@@ -14,7 +14,7 @@ class KeyboardService:
     def __init__(self):
         """Constructs a new KeyboardService."""
         self._keys = {}
-
+        
         self._keys['w'] = pyray.KEY_W
         self._keys['a'] = pyray.KEY_A
         self._keys['s'] = pyray.KEY_S
